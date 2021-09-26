@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View,Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -12,9 +12,21 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 function Feed() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>HOME!</Text>
-      <Icon name="envelope"/>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Image
+        style={{width:600, height: 240, resizeMode: 'stretch'}}
+        source={{
+          uri: 'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+        }}
+      />
+      <Text>
+        El gato doméstico (Felis silvestris catus), llamado popularmente gato es
+        un mamífero carnívoro de la familia Felidae. Es una subespecie
+        domesticada por la convivencia con el ser humano. El nombre actual en
+        muchas lenguas proviene del latín vulgar catus. Irónicamente, catus
+        aludía a los gatos salvajes, mientras que los gatos domésticos, en
+        latín, eran llamados felis.
+      </Text>
     </View>
   );
 }
@@ -23,14 +35,6 @@ function Profile() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Profile!</Text>
-    </View>
-  );
-}
-
-function Pantalla1() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Hola a todos!</Text>
     </View>
   );
 }
@@ -54,7 +58,7 @@ function MyTabs() {
       }}
     >
       <Tab.Screen
-        name="Feed"
+        name="GATOS"
         component={Feed}
         options={{
           tabBarLabel: 'Home',
@@ -64,32 +68,22 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
+        name="DIVERSOS GATOS"
         component={Notifications}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Gatos',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="envelope" color={color} size={size} />
+            <Icon name="paw" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name="SOBRE MI"
         component={Profile}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Acerca',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="signal" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Pantalla1"
-        component={Pantalla1}
-        options={{
-          tabBarLabel: 'Ejemplo',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="gear" color={color} size={size} />
+            <Icon name="male" color={color} size={size} />
           ),
         }}
       />
