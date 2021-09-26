@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // npx react-native run-android
 // npx @react-native-community/cli doctor
@@ -14,6 +14,7 @@ function Feed() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>HOME!</Text>
+      <Icon name="envelope"/>
     </View>
   );
 }
@@ -68,7 +69,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Updates',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="basket" color={color} size={size} />
+            <Icon name="envelope" color={color} size={size} />
           ),
         }}
       />
@@ -78,7 +79,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="apps" color={color} size={size} />
+            <Icon name="signal" color={color} size={size} />
           ),
         }}
       />
@@ -88,7 +89,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Ejemplo',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="cafe" color={color} size={size} />
+            <Icon name="gear" color={color} size={size} />
           ),
         }}
       />
