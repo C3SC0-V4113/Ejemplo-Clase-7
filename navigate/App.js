@@ -3,7 +3,7 @@ import {Text, View, Image, ScrollView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Card, Button} from 'react-native-elements';
+import {Card} from 'react-native-elements';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 // npx react-native run-android
@@ -13,24 +13,24 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const users = [
   {
-    name: 'brynn',
+    name: 'Siames',
     avatar:
-      'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+      'https://i2.wp.com/hipertextual.com/wp-content/uploads/2021/04/siames-scaled.jpg?fit=2560%2C1707&ssl=1',
   },
   {
-    name: 'brynn',
+    name: 'Persa',
     avatar:
-      'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+      'https://static.affinity-petcare.com/advance/cdn/farfuture/jLkk-vpOyiyXVaGRuPOwI4hNqbhNTXZUaYevX0hUBh8/drupal-cache:qvko3p/sites/default/files/field/image/cuidados_gato_persa.jpg',
   },
   {
-    name: 'brynn',
+    name: 'Angora',
     avatar:
-      'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+      'https://media.istockphoto.com/photos/portrait-of-a-white-turkish-angora-cat-picture-id1140917170?k=20&m=1140917170&s=612x612&w=0&h=czECGOY2vpHjBk2fEz3UAOaolOue0cAjIUgg5qNnq1c=',
   },
   {
-    name: 'brynn',
+    name: 'Esfinge',
     avatar:
-      'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+      'https://noticiasrealessv.com/wp-content/uploads/2020/04/Gato-Sphynx-o-gato-esfinge-1.jpg',
   },
   // more users here
 ];
@@ -39,7 +39,7 @@ function Feed() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Image
-        style={{width: 600, height: 240, resizeMode: 'stretch'}}
+        style={{width: 600, height: 315, resizeMode: 'cover'}}
         source={{
           uri: 'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
         }}
@@ -59,14 +59,20 @@ function Feed() {
 function Profile() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Card>
+      <Card style={{height: 500}}>
         <Card.Title>Francisco José Valle Cornejo-VC190544</Card.Title>
         <Card.Divider />
-        <Card.Image source={{uri: 'https://www.cescovalle.com/img/practice_3_MEJOR-min.jpg'}}>
-        </Card.Image>
+        <Image
+          style={{width: 300, height: 300}}
+          resizeMode="cover"
+          source={{
+            uri: 'https://www.cescovalle.com/img/practice_3_MEJOR-min.jpg',
+          }}
+        />
+
         <Text style={{marginBottom: 10}}>
-            Estudiante de Ingenieria en Ciencias de la Computación
-          </Text>
+          Estudiante de Ingenieria en Ciencias de la Computación
+        </Text>
       </Card>
     </View>
   );
@@ -77,17 +83,19 @@ function Notifications() {
     <ScrollView>
       <SafeAreaProvider>
         <Card>
-          <Card.Title>CARD WITH DIVIDER</Card.Title>
+          <Card.Title>Diferentes Razas</Card.Title>
           <Card.Divider />
           {users.map((u, i) => {
             return (
               <View key={i}>
                 <Image
-                  style={{width: 600, height: 240, resizeMode: 'stretch'}}
+                  style={{width: 300, height: 180}}
                   resizeMode="cover"
                   source={{uri: u.avatar}}
                 />
-                <Text>{u.name}</Text>
+                <Text style={{textAlign: 'center', fontSize: 15}}>
+                  {u.name}
+                </Text>
               </View>
             );
           })}
