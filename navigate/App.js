@@ -3,7 +3,7 @@ import {Text, View, Image, ScrollView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Card} from 'react-native-elements';
+import {Card, Button} from 'react-native-elements';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 // npx react-native run-android
@@ -59,7 +59,15 @@ function Feed() {
 function Profile() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Profile!</Text>
+      <Card>
+        <Card.Title>Francisco José Valle Cornejo-VC190544</Card.Title>
+        <Card.Divider />
+        <Card.Image source={{uri: 'https://www.cescovalle.com/img/practice_3_MEJOR-min.jpg'}}>
+        </Card.Image>
+        <Text style={{marginBottom: 10}}>
+            Estudiante de Ingenieria en Ciencias de la Computación
+          </Text>
+      </Card>
     </View>
   );
 }
@@ -67,24 +75,24 @@ function Profile() {
 function Notifications() {
   return (
     <ScrollView>
-    <SafeAreaProvider>
-      <Card>
-        <Card.Title>CARD WITH DIVIDER</Card.Title>
-        <Card.Divider />
-        {users.map((u, i) => {
-          return (
-            <View key={i}>
-              <Image
-                style={{width: 600, height: 240, resizeMode: 'stretch'}}
-                resizeMode="cover"
-                source={{uri: u.avatar}}
-              />
-              <Text>{u.name}</Text>
-            </View>
-          );
-        })}
-      </Card>
-    </SafeAreaProvider>
+      <SafeAreaProvider>
+        <Card>
+          <Card.Title>CARD WITH DIVIDER</Card.Title>
+          <Card.Divider />
+          {users.map((u, i) => {
+            return (
+              <View key={i}>
+                <Image
+                  style={{width: 600, height: 240, resizeMode: 'stretch'}}
+                  resizeMode="cover"
+                  source={{uri: u.avatar}}
+                />
+                <Text>{u.name}</Text>
+              </View>
+            );
+          })}
+        </Card>
+      </SafeAreaProvider>
     </ScrollView>
   );
 }
