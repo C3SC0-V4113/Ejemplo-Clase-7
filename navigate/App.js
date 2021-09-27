@@ -1,9 +1,10 @@
 import * as React from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, ScrollView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Card} from 'react-native-elements';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 // npx react-native run-android
 // npx @react-native-community/cli doctor
@@ -13,19 +14,23 @@ import {Card} from 'react-native-elements';
 const users = [
   {
     name: 'brynn',
-    avatar: 'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+    avatar:
+      'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
   },
   {
     name: 'brynn',
-    avatar: 'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+    avatar:
+      'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
   },
   {
     name: 'brynn',
-    avatar: 'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+    avatar:
+      'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
   },
   {
     name: 'brynn',
-    avatar: 'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+    avatar:
+      'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
   },
   // more users here
 ];
@@ -60,19 +65,27 @@ function Profile() {
 }
 
 function Notifications() {
-  return(
-  <Card>
-    <Card.Title>CARD WITH DIVIDER</Card.Title>
-    <Card.Divider />
-    {users.map((u, i) => {
-      return (
-        <View key={i}>
-          <Image style={{width: 600, height: 240, resizeMode: 'stretch'}} resizeMode="cover" source={{uri: u.avatar}} />
-          <Text>{u.name}</Text>
-        </View>
-      );
-    })}
-  </Card>
+  return (
+    <ScrollView>
+    <SafeAreaProvider>
+      <Card>
+        <Card.Title>CARD WITH DIVIDER</Card.Title>
+        <Card.Divider />
+        {users.map((u, i) => {
+          return (
+            <View key={i}>
+              <Image
+                style={{width: 600, height: 240, resizeMode: 'stretch'}}
+                resizeMode="cover"
+                source={{uri: u.avatar}}
+              />
+              <Text>{u.name}</Text>
+            </View>
+          );
+        })}
+      </Card>
+    </SafeAreaProvider>
+    </ScrollView>
   );
 }
 
