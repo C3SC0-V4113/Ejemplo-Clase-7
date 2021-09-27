@@ -38,20 +38,25 @@ const users = [
 function Feed() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Image
-        style={{width: 600, height: 315, resizeMode: 'cover'}}
-        source={{
-          uri: 'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
-        }}
-      />
-      <Text>
-        El gato doméstico (Felis silvestris catus), llamado popularmente gato es
-        un mamífero carnívoro de la familia Felidae. Es una subespecie
-        domesticada por la convivencia con el ser humano. El nombre actual en
-        muchas lenguas proviene del latín vulgar catus. Irónicamente, catus
-        aludía a los gatos salvajes, mientras que los gatos domésticos, en
-        latín, eran llamados felis.
-      </Text>
+      <Card style={{height: 500}}>
+        <Card.Title>Francisco José Valle Cornejo-VC190544</Card.Title>
+        <Card.Divider />
+        <Image
+          style={{width: 300, height: 300}}
+          resizeMode="cover"
+          source={{
+            uri: 'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-10-datos-curiosos-sobre-los-gatos.png?itok=88pMyzkl',
+          }}
+        />
+        <Text style={{marginBottom: 10}}>
+          El gato doméstico (Felis silvestris catus), llamado popularmente gato
+          es un mamífero carnívoro de la familia Felidae. Es una subespecie
+          domesticada por la convivencia con el ser humano. El nombre actual en
+          muchas lenguas proviene del latín vulgar catus. Irónicamente, catus
+          aludía a los gatos salvajes, mientras que los gatos domésticos, en
+          latín, eran llamados felis.
+        </Text>
+      </Card>
     </View>
   );
 }
